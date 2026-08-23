@@ -1,7 +1,19 @@
 #!/usr/bin/python3
-search_replace = __import__('1-search_replace').search_replace
+def search_replace(my_list, search, replace):
+    """Replace all occurrences of a value in a copy of a list
 
-my_list = [1, 2, 3]
-new_list = search_replace(my_list, 1, 0)
-print(new_list)
-print(my_list)
+    Args:
+        my_list: the original list (never modified)
+        search: the value to search for
+        replace: the value to replace it with
+
+    Returns:
+        A new list with every occurrence of search replaced by replace
+    """
+    new_list = []
+    for element in my_list:
+        if element == search:
+            new_list.append(replace)
+        else:
+            new_list.append(element)
+    return new_list
