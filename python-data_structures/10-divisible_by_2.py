@@ -1,10 +1,16 @@
 #!/usr/bin/python3
-divisible_by_2 = __import__('10-divisible_by_2').divisible_by_2
+def divisible_by_2(my_list=[]):
+    """Find all multiples of 2 in a list
 
-my_list = [0, 1, 2, 3, 4, 5, 6]
-list_result = divisible_by_2(my_list)
+    Args:
+        my_list: list of integers
 
-i = 0
-while i < len(list_result):
-    print("{:d} {:s} divisible by 2".format(my_list[i], "is" if list_result[i] else "is not"))
-    i += 1
+    Returns:
+        A new list of the same size, with True at each position
+        where the corresponding integer is a multiple of 2,
+        False otherwise
+    """
+    result = []
+    for number in my_list:
+        result.append(number % 2 == 0)
+    return result
