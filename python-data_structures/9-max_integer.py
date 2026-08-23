@@ -1,6 +1,17 @@
 #!/usr/bin/python3
-max_integer = __import__('9-max_integer').max_integer
+def max_integer(my_list=[]):
+    """Find the biggest integer of a list
 
-my_list = [1, 90, 2, 13, 34, 5, -13, 3]
-max_value = max_integer(my_list)
-print("Max: {}".format(max_value))
+    Args:
+        my_list: list of integers
+
+    Returns:
+        The biggest integer in my_list, or None if the list is empty
+    """
+    if len(my_list) == 0:
+        return None
+    biggest = my_list[0]
+    for number in my_list:
+        if number > biggest:
+            biggest = number
+    return biggest
