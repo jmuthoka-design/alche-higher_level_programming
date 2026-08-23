@@ -1,28 +1,13 @@
 #!/usr/bin/python3
-def uniq_add(my_list=[]):
-    """Add all unique integers in a list (only once for each integer)
+mod = __import__('0-square_matrix_simple')
+square_matrix_simple = mod.square_matrix_simple
 
-    Args:
-        my_list: list of integers
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-    Returns:
-        The sum of each distinct integer in my_list, counted once
-    """
-    return sum(set(my_list))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               
+new_matrix = square_matrix_simple(matrix)
+print(new_matrix)
+print(matrix)            
