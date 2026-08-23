@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-replace_in_list = __import__('2-replace_in_list').replace_in_list
+def replace_in_list(my_list, idx, element):
+    """Replace an element of a list at a specific position
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_element = 9
-new_list = replace_in_list(my_list, idx, new_element)
+    Args:
+        my_list: the list to modify
+        idx: the index of the element to replace
+        element: the new value to place at idx
 
-print(new_list)
-print(my_list)
+    Returns:
+        my_list, modified if idx is valid, unchanged otherwise
+    """
+    if idx < 0:
+        return my_list
+    if idx >= len(my_list):
+        return my_list
+    my_list[idx] = element
+    return my_list
