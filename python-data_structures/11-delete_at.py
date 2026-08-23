@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-delete_at = __import__('11-delete_at').delete_at
+def delete_at(my_list=[], idx=0):
+    """Delete the item at a specific position in a list
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_list = delete_at(my_list, idx)
-print(new_list)
-print(my_list)
+    Args:
+        my_list: the list to modify
+        idx: the index of the item to delete
+
+    Returns:
+        my_list, with the item at idx removed if idx is valid,
+        unchanged otherwise
+    """
+    if idx < 0:
+        return my_list
+    if idx >= len(my_list):
+        return my_list
+    del my_list[idx]
+    return my_list
