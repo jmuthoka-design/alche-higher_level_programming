@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-"""Defines the MyList class."""
+"""Defines a custom list class that can print a sorted copy."""
 
 
 class MyList(list):
-    """A list subclass with a method to print a sorted copy."""
+    """Represents a list with an additional sorting display method."""
 
     def print_sorted(self):
-        """Print the list in ascending order."""
-        new_list = self.copy()
-        new_list.sort()
-        print(new_list)
+        """Prints the list in ascending order without changing the original."""
+        sorted_list = self.copy()
+        sorted_list.sort()
+        print(sorted_list)
         
