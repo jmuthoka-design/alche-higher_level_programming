@@ -1,4 +1,7 @@
 #!/usr/bin/python3
-class square:
-    """represents an empty class"""
-    
+"""Defines an empty Square class."""
+
+
+class Square:
+    """Represent a square."""
+EOF
