@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Add command-line arguments to a list and save it as JSON."""
+"""Add command-line arguments to a list and save the list as JSON."""
 
 import sys
 
@@ -10,9 +10,11 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 
 try:
-    items = load_from_json_file(filename)
+    my_list = load_from_json_file(filename)
 except FileNotFoundError:
-    items = []
+    my_list = []
 
-items.extend(sys.argv[1:])
-save_to_json_file(items, filename)
+for argument in sys.argv[1:]:
+    my_list.append(argument)
+
+save_to_json_file(my_list, filename)
