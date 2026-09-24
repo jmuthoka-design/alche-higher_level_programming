@@ -8,3 +8,6 @@ and functions.
 
 Basic Python scripts covering `if`/`elif`/`else` statements, loops, and
 functions.
+
+
+python attributes
