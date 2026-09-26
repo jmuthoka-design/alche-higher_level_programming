@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""This module fetches and displays the status of the ALU intranet server."""
+"""This module fetches a URL and displays information about its response."""
+import sys
 import requests
 
 
 def fetch_status():
-    """Fetches the intranet status and displays its response body."""
-    response = requests.get("https://alu-intranet.hbtn.io/status")
+    """Fetches the requested URL and displays its response body."""
+    url = sys.argv[1] if len(sys.argv) > 1 else "https://intranet.hbtn.io/status"
+    response = requests.get(url)
     print("Body response:")
     print("\t- type:", type(response.text))
     print("\t- content:", response.text)
@@ -13,3 +15,4 @@ def fetch_status():
 
 if __name__ == "__main__":
     fetch_status()
+    
