@@ -1,3 +1,3 @@
 #!/bin/bash
-# Sends a GET request to the given URL and displays the body only if the status code is 200
-curl -s -w '\n%{http_code}' "$1" | awk 'NR==1{b=$0;next}{c=$0}END{if(c==200)print b}'
+# This script displays the body only when the server returns an HTTP 200 status.
+curl -s -o /tmp/body -w '%{http_code}' "$1" | grep -q '^200$' && cat /tmp/body
