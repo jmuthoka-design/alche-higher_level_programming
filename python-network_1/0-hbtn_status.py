@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Fetches the status of the Holberton intranet server and displays its body."""
+"""Fetches the intranet status and displays information about its body."""
 import urllib.request
 
 
 def fetch_status():
-    """Fetches the intranet status and displays information about its body."""
+    """Fetches the intranet status and displays its response body."""
     with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
         body = response.read()
         print("Body response:")
